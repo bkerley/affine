@@ -8,9 +8,11 @@ module Affine
       @a_inv = extended_gcd(a_key, modulus)
     end
     def encipher(plaintext)
+      raise RangeError.new(plaintext, @modulus) if plaintext > @modulus
       ((@a_key * plaintext) + @b_key) % @modulus
     end
     def decipher(ciphertext)
+      raise RangeError.new(ciphertext, @modulus) if ciphertext > @modulus
       (@a_inv * (ciphertext - @b_key)) % @modulus
     end
 
