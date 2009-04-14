@@ -1,6 +1,10 @@
 = affine
 
-Description goes here.
+Simple affine cipher
+
+    a = Affine::Cipher.new(2176782371, 65182241782, 123235151)
+    r = rand(123235150) # (should be smaller then the modulus)
+    r == a.decipher(a.encipher r)
 
 == Copyright
 
