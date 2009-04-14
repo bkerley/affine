@@ -6,8 +6,8 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "affine"
     gem.summary = %Q{Simple affine cipher for Ruby}
-    gem.email = "bryce@worldmedia.net"
-    gem.homepage = "http://github.com/bryce/affine"
+    gem.email = "bkerley@brycekerley.net"
+    gem.homepage = "http://github.com/bkerley/affine"
     gem.authors = ["Bryce Kerley"]
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
