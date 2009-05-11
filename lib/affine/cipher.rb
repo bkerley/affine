@@ -16,6 +16,8 @@ module Affine
       (@a_inv * (ciphertext - @b_key)) % @modulus
     end
 
+    alias_method :encrypt, :encipher
+    alias_method :decrypt, :decipher
     private
     # from http://snippets.dzone.com/posts/show/6074
     def extended_gcd(b,m,_recursion_depth=0)
