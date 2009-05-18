@@ -10,6 +10,7 @@ begin
     gem.homepage = "http://github.com/bkerley/affine"
     gem.authors = ["Bryce Kerley"]
 
+    gem.rubyforge_project = 'affine'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
