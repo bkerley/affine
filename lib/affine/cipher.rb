@@ -28,12 +28,20 @@ module Affine
     end
 
     # Encrypt one +plaintext+ into a +ciphertext+.
+    #
+    # == Argument
+    # [+plaintext+] a single positive integer between 0 and the +modulus+
+    #               for the cipher
     def encipher(plaintext)
       raise RangeError.new(plaintext, @modulus) if plaintext > @modulus
       ((@a_key * plaintext) + @b_key) % @modulus
     end
 
     # Decrypt one +ciphertext+ into a +plaintext+.
+    #
+    # == Argument
+    # [+ciphertext+] a single positive integer between 0 and the +modulus+
+    #               for the cipher
     def decipher(ciphertext)
       raise RangeError.new(ciphertext, @modulus) if ciphertext > @modulus
       (@a_inv * (ciphertext - @b_key)) % @modulus
