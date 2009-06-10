@@ -13,7 +13,7 @@ module Affine
   #
   # Keys and moduli from external sources might raise these.
   class CoprimeError < AffineError
-    def initialize(a, b) #:nodoc:
+    def initialize(a, b) #:nodoc: :notnew:
       super("Expected #{a} to be coprime with #{b}")
     end
   end
@@ -23,7 +23,7 @@ module Affine
   # Plaintexts or ciphertexts from external sources might
   # raise these.
   class RangeError < AffineError
-    def initialize(n, mod) #:nodoc:
+    def initialize(n, mod) #:nodoc: :notnew:
       super("Expected input #{n} to be smaller than modulus #{mod}")
     end
   end
