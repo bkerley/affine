@@ -41,7 +41,7 @@ module Affine
     #
     # == Argument
     # [+ciphertext+] a single positive integer between 0 and the +modulus+
-    #               for the cipher
+    #                for the cipher
     def decipher(ciphertext)
       raise RangeError.new(ciphertext, @modulus) if ciphertext > @modulus
       (@a_inv * (ciphertext - @b_key)) % @modulus
