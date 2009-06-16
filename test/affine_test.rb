@@ -14,16 +14,16 @@ class AffineTest < Test::Unit::TestCase
 
     should 'encipher ITSCOOL correctly' do
       # example from http://en.wikipedia.org/wiki/Affine_cipher
-      plain = 'ITSCOOL'.split('').map{ |c| c[0] - 65}
+      plain = 'ITSCOOL'.unpack('CCCCCCC').map{ |c| c - 65}
       coded = plain.map{ |c| @a.encipher c }
-      check ='WZUSAAL'.split('').map{ |c| c[0] - 65}
+      check ='WZUSAAL'.unpack('CCCCCCC').map{ |c| c - 65}
       assert_equal check, coded
     end
     should 'decipiher WZUSAAL correctly' do
       # example from http://en.wikipedia.org/wiki/Affine_cipher
-      check ='WZUSAAL'.split('').map{ |c| c[0] - 65}
+      check ='WZUSAAL'.unpack('CCCCCCC').map{ |c| c - 65}
       coded = check.map{ |c| @a.decipher c }
-      plain = 'ITSCOOL'.split('').map{ |c| c[0] - 65}
+      plain = 'ITSCOOL'.unpack('CCCCCCC').map{ |c| c - 65}
       assert_equal plain, coded
     end
   end
