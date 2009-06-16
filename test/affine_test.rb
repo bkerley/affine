@@ -41,7 +41,7 @@ class AffineTest < Test::Unit::TestCase
       # I'm not doing this by hand
       1000.times do
         r = rand(123235150)
-        assert_equal r, @a.decipher(@a.encipher r)
+        assert_equal r, @a.decipher(@a.encipher(r))
       end
     end
   end
